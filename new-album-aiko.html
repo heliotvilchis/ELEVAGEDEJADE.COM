@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Album Aiko</title>
+
+    <!--JQuerry-->
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha384-ZvpUoO/+PpLXR1lu4jmpXWu80pZlYUAfxl5NsBMWOEPSjUn/6Z/hRTt8+pR6L4N2" crossorigin="anonymous"></script>
+
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Dancing+Script:wght@600&display=swap');
+        body {
+            font-family: 'Dancing Script', cursive;
+            color: #42464b;
+            text-shadow: 2px 2px 2px #babcbfb9;
+            text-align: center;
+            background-color: #586f8c27;
+        }
+        
+        h1,
+        h2 {
+            margin: 0;
+            padding: 0;
+            display: table-cell;
+            vertical-align: middle;
+        }
+        
+        h1 {
+            font-size: 12vw;
+        }
+        
+        h2 {
+            font-size: 8vw;
+        }
+        
+        .container {
+            margin: auto;
+            width: 96vw;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        
+        .bg-white {
+            background-color: white;
+        }
+        
+        .padding-top {
+            padding-top: 0px;
+        }
+        
+        .element {
+            margin: 5px;
+            box-shadow: 1px 3px 5px #000a1454;
+        }
+        
+        .name {
+            width: 90vw;
+            height: 90vw;
+            display: table;
+            text-align: center;
+        }
+        
+        .photo1 {
+            width: 44vw;
+            height: 44vw;
+            background-image: url('/albums/aiko-dream_in_black_gold/IMG2868.webp');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .photo2 {
+            width: 44vw;
+            height: 44vw;
+            background-image: url('/albums/aiko-dream_in_black_gold/IMG2869.webp');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .photo3 {
+            width: 44vw;
+            height: 44vw;
+            background-image: url('/albums/aiko-dream_in_black_gold/IMG2871.webp');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        
+        .text1 {
+            width: 44vw;
+            height: 44vw;
+            display: table;
+            text-align: center;
+        }
+        /*Images*/
+        
+        .display-none {
+            display: none;
+        }
+        
+        .clikable {
+            cursor: pointer;
+        }
+        
+        #big-image-container {
+            box-shadow: inset 0 0 2000px rgb(255, 255, 255);
+            width: 100vw;
+            height: 100vh;
+            position: fixed;
+            top: 0;
+            left: 0;
+        }
+        
+        #image1 {
+            background-image: url('/albums/aiko-dream_in_black_gold/IMG2868.webp');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 93vw;
+            height: 93vw;
+            position: fixed;
+            margin: calc(50vh - 45vw) 5vw;
+        }
+        
+        #image2 {
+            background-image: url('/albums/aiko-dream_in_black_gold/IMG2869.webp');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 93vw;
+            height: 93vw;
+            position: fixed;
+            margin: calc(50vh - 45vw) 5vw;
+        }
+        
+        #image3 {
+            background-image: url('/albums/aiko-dream_in_black_gold/IMG2871.webp');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 93vw;
+            height: 93vw;
+            position: fixed;
+            margin: calc(50vh - 45vw) 5vw;
+        }
+        
+        @media (min-width: 600px) {
+            .container {
+                width: 70vw;
+            }
+            .element {
+                margin: 0.7vw;
+            }
+            h1 {
+                font-size: 5vw;
+            }
+            h2 {
+                font-size: 2.5vw;
+            }
+            .name {
+                width: 40.7vw;
+                height: 40.7vw;
+                display: table;
+                text-align: center;
+            }
+            .photo1,
+            .photo2,
+            .text1 {
+                width: 20vw;
+                height: 20vw;
+            }
+            .display-flex {
+                display: flex;
+            }
+            .photo3 {
+                width: 40vw;
+                height: 20vw;
+                background-position-y: -20px;
+            }
+            #image1,
+            #image2,
+            #image3 {
+                width: 90vh;
+                height: 90vh;
+                margin: 5vh calc(41vw - 30vh);
+            }
+            #big-image-container {
+                background-color: rgb(255, 255, 255);
+            }
+        }
+    </style>
+
+    <script>
+        function closeImage() {
+            $("#big-image-container").addClass("display-none");
+            $("#image1").addClass("display-none");
+            $("#image2").addClass("display-none");
+            $("#image3").addClass("display-none");
+        }
+
+        function image1() {
+            $("#big-image-container").removeClass("display-none");
+            $("#image1").removeClass("display-none");
+        }
+
+        function image2() {
+            $("#big-image-container").removeClass("display-none");
+            $("#image2").removeClass("display-none");
+        }
+
+        function image3() {
+            $("#big-image-container").removeClass("display-none");
+            $("#image3").removeClass("display-none");
+        }
+    </script>
+
+</head>
+
+<body>
+    <div class="container padding-top">
+        <div class="bg-white name element">
+            <h1>DeJade Dream in Black Gold <br><br>( Aiko )</h1>
+        </div>
+        <div>
+            <div class="photo1 element clikable" onclick="image1();"> </div>
+            <div class="bg-white element text1">
+                <h2>Co-Propriété avec Mme Bélanger</h2>
+            </div>
+        </div>
+        <div class="display-flex ">
+            <div class="photo2 element clikable" onclick="image2();"> </div>
+            <div class="photo3 element clikable" onclick="image3();"> </div>
+        </div>
+
+
+
+        <div id="big-image-container" class="display-none" onclick="closeImage();">
+            <div id="image1" class="display-none"></div>
+            <div id="image2" class="display-none"></div>
+            <div id="image3" class="display-none"></div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+</body>
+
+</html>
